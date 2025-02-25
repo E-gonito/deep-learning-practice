@@ -2,6 +2,11 @@
 
 A repository for learning and experimenting with Deep Learning using Keras and TensorFlow, containerized with Docker for reproducibility and ease of use.
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5d380431-accf-4fb4-83b5-cbb4ef399a58" alt="1ghkvvuoriz41">
+</p>
+
+Aigis - "Why don’t Dockerized models crash? Because they’ve got a *compose*d backup plan!"
 ---
 
 ## Overview
@@ -30,26 +35,9 @@ Python dependencies are managed via `requirements.txt` and installed in the Dock
 
 For full details, see [TensorFlow Installation Guide](https://www.tensorflow.org/install/pip).
 
----
-
 ## Directory Structure
+![Screenshot 2025-02-25 225408](https://github.com/user-attachments/assets/728a672e-465c-449e-bf10-3d9220a13df3)
 
-learning_models/
-├── src/ # Application code
-│ └── model.py # Main script
-├── tests/ # Test suite
-│ └── test_gpu.py # GPU test script
-├── docs/ # Documentation
-│ ├── README.md # Project overview
-│ └── LICENSE # License file
-├── Dockerfile # Docker image definition
-├── docker-compose.yml # Compose configuration
-├── requirements.txt # Python dependencies
-├── .dockerignore # Files to exclude from Docker builds
-├── .gitignore # Files to exclude from Git
-└── .env # Environment variables (optional)
-
----
 
 ## Setup and Usage
 
