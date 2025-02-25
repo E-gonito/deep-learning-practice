@@ -8,8 +8,11 @@
     # Switch to root user if needed (the base image might already be root).
     USER root
     
-    # Update pip and install additional Python packages (NumPy, etc.)
-    RUN pip install --no-cache-dir --upgrade pip numpy
+    # Update pip and install additional Python packages (NumPy, pydot, etc.)
+    RUN apt-get update && apt-get install -y \
+        graphviz \
+        && rm -rf /var/lib/apt/lists/* \
+        && pip install --no-cache-dir --upgrade pip numpy pydot
     
     # Create a working directory (optional but recommended).
     WORKDIR /app
@@ -26,4 +29,3 @@
     #---------------------------------------------
     # End of Dockerfile
     #---------------------------------------------
-    
