@@ -1,11 +1,10 @@
-import tensorflow as tf     # Core TensorFlow library
-import numpy as np    
-from tensorflow import keras            # NumPy for numerical operations
-from keras.utils import plot_model     # For visualizing model architecture
-from keras.layers import Layer         # Base class for creating custom layers
-from keras.models import Sequential    # Sequential model API
-from keras.layers import Softmax       # Softmax activation layer
-from keras.layers import Dropout  
+import tensorflow as tf
+import numpy as np 
+from tensorflow.keras.layers import Layer 
+
+# Get all devices, tell TF to only see GPUs (no CPU) 
+gpus = tf.config.list_physical_devices('GPU')
+tf.config.set_visible_devices(gpus, 'GPU')  
 
 class CustomDenseLayer(Layer):
     def __init__(self, num_outputs):
@@ -21,4 +20,8 @@ class CustomDenseLayer(Layer):
                                 trainable=True)
 
     def call(self, input):
-        return tf.matmul(input, self.kernel)
+        return tf.matmul(input, self.weight) + self.bias
+x = tf.ones((2,2))
+layer1 = CustomDenseLayer(3)    
+y = layer1(x)
+print(y)
