@@ -1,0 +1,9 @@
+# docker-compose.yml
+services:
+  app:
+    build: .
+    volumes:
+      - .:/app
+    user: "${UID}:${GID}"
+    tty: true
+    stdin_open: true
